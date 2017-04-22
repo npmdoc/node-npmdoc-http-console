@@ -1,0 +1,686 @@
+<div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a
+
+        href="https://github.com/cloudhead/http-console#readme"
+
+    >http-console (v0.6.4)</a>
+</h1>
+<h4>Speak HTTP like a native</h4>
+<div class="apidocSectionDiv"><a
+    href="#apidoc.tableOfContents"
+    id="apidoc.tableOfContents"
+><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.http-console">module http-console</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.http-console.Console">
+            function <span class="apidocSignatureSpan">http-console.</span>Console
+            <span class="apidocSignatureSpan">(host, port, options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.http-console.merge">
+            function <span class="apidocSignatureSpan">http-console.</span>merge
+            <span class="apidocSignatureSpan">(target)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">http-console.</span>Console.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">http-console.</span>help</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">http-console.</span>version</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.http-console.Console">module http-console.Console</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.http-console.Console.Console">
+            function <span class="apidocSignatureSpan">http-console.</span>Console
+            <span class="apidocSignatureSpan">(host, port, options)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.http-console.Console.prototype">module http-console.Console.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.http-console.Console.prototype.dataPrompt">
+            function <span class="apidocSignatureSpan">http-console.Console.prototype.</span>dataPrompt
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.http-console.Console.prototype.exec">
+            function <span class="apidocSignatureSpan">http-console.Console.prototype.</span>exec
+            <span class="apidocSignatureSpan">(command)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.http-console.Console.prototype.initialize">
+            function <span class="apidocSignatureSpan">http-console.Console.prototype.</span>initialize
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.http-console.Console.prototype.printHeaders">
+            function <span class="apidocSignatureSpan">http-console.Console.prototype.</span>printHeaders
+            <span class="apidocSignatureSpan">(headers)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.http-console.Console.prototype.printResponse">
+            function <span class="apidocSignatureSpan">http-console.Console.prototype.</span>printResponse
+            <span class="apidocSignatureSpan">(res, body, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.http-console.Console.prototype.prompt">
+            function <span class="apidocSignatureSpan">http-console.Console.prototype.</span>prompt
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.http-console.Console.prototype.rememberCookies">
+            function <span class="apidocSignatureSpan">http-console.Console.prototype.</span>rememberCookies
+            <span class="apidocSignatureSpan">(headers)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.http-console.Console.prototype.request">
+            function <span class="apidocSignatureSpan">http-console.Console.prototype.</span>request
+            <span class="apidocSignatureSpan">(method, path, headers, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.http-console.Console.prototype.setCookies">
+            function <span class="apidocSignatureSpan">http-console.Console.prototype.</span>setCookies
+            <span class="apidocSignatureSpan">(headers)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.http-console.Console.prototype.welcome">
+            function <span class="apidocSignatureSpan">http-console.Console.prototype.</span>welcome
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.http-console" id="apidoc.module.http-console">module http-console</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.http-console.Console" id="apidoc.element.http-console.Console">
+        function <span class="apidocSignatureSpan">http-console.</span>Console
+        <span class="apidocSignatureSpan">(host, port, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">Console = function (host, port, options) {
+    this.host = host;
+    this.port = parseInt(port);
+    this.options = options;
+    this.timeout = this.options.timeout ? 5000 : 0;
+    this.path = [];
+    this.socket = null;
+    this.cookies = {};
+    consoles.push(this);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.http-console.merge" id="apidoc.element.http-console.merge">
+        function <span class="apidocSignatureSpan">http-console.</span>merge
+        <span class="apidocSignatureSpan">(target)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">merge = function (target) {
+    var args = Array.prototype.slice.call(arguments, 1);
+
+    args.forEach(function (a) {
+        var keys = Object.keys(a);
+        for (var i = 0; i &#x3c; keys.length; i++) {
+            target[keys[i]] = a[keys[i]];
+        }
+    });
+    return target;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.http-console.Console" id="apidoc.module.http-console.Console">module http-console.Console</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.http-console.Console.Console" id="apidoc.element.http-console.Console.Console">
+        function <span class="apidocSignatureSpan">http-console.</span>Console
+        <span class="apidocSignatureSpan">(host, port, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">Console = function (host, port, options) {
+    this.host = host;
+    this.port = parseInt(port);
+    this.options = options;
+    this.timeout = this.options.timeout ? 5000 : 0;
+    this.path = [];
+    this.socket = null;
+    this.cookies = {};
+    consoles.push(this);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.http-console.Console.prototype" id="apidoc.module.http-console.Console.prototype">module http-console.Console.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.http-console.Console.prototype.dataPrompt" id="apidoc.element.http-console.Console.prototype.dataPrompt">
+        function <span class="apidocSignatureSpan">http-console.Console.prototype.</span>dataPrompt
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">dataPrompt = function () {
+    var prompt = &#x27;... &#x27;;
+    this.readline.setPrompt(prompt.grey, prompt.length);
+    this.readline.prompt();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.http-console.Console.prototype.exec" id="apidoc.element.http-console.Console.prototype.exec">
+        function <span class="apidocSignatureSpan">http-console.Console.prototype.</span>exec
+        <span class="apidocSignatureSpan">(command)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">exec = function (command) {
+    var method, headers = {}, path = this.path, body,
+        that = this,
+        match, req;
+
+    if (this.pending) {
+        req = this.request(this.pending.method, this.pending.path, {
+            &#x27;Content-Length&#x27; : command.length
+        }, function (res, body) {
+            that.printResponse(res, body, function () {
+                that.prompt();
+            });
+        });
+        req.write(command);
+        req.end();
+
+        return this.pending = null;
+    } else if (command[0] === &#x27;/&#x27;) {
+        if (command === &#x27;//&#x27;) {
+            this.path = [];
+        } else {
+            Array.prototype.push.apply(
+                this.path, command.slice(1).split(&#x27;/&#x27;)
+            );
+        }
+    } else if (command === &#x27;..&#x27;) {
+        this.path.pop();
+    } else if (command[0] === &#x27;.&#x27;) {
+        switch (command.slice(1)) {
+            case &#x27;h&#x27;:
+            case &#x27;headers&#x27;:
+                exports.merge(headers, this.headers);
+                this.setCookies(headers);
+                this.printHeaders(headers);
+                break;
+            case &#x27;default-headers&#x27;:
+                this.printHeaders(this.headers);
+                break;
+            case &#x27;o&#x27;:
+            case &#x27;options&#x27;:
+                inspect(this.options);
+                break;
+            case &#x27;c&#x27;:
+            case &#x27;cookies&#x27;:
+                inspect(this.cookies);
+                break;
+            case &#x27;help&#x27;:
+                console.log(exports.help);
+                break;
+            case &#x27;j&#x27;:
+            case &#x27;json&#x27;:
+                this.headers[&#x27;Content-Type&#x27;] = &#x27;application/json&#x27;;
+                break;
+            case &#x27;exit&#x27;:
+            case &#x27;quit&#x27;:
+            case &#x27;q&#x27;:
+                process.exit(0);
+        }
+    } else if (command[0] === &#x27;\\&#x27;) {
+        this.exec(command.replace(/^\\/, &#x27;.&#x27;));
+    } else if (match = command.match(/^([a-zA-Z-]+):\s*(.*)/)) {
+        if (match[2]) {
+            this.headers[match[1]] = match[2];
+        } else {
+            delete(this.headers[match[1]]);
+        }
+    } else if (/^(GET|POST|PUT|PATCH|HEAD|DELETE|OPTIONS)/i.test(command)) {
+        command = command.split(/\s+/);
+        method  = command.shift().toUpperCase();
+        path    = this.path.slice(0);
+
+        if (command.length &#x3e; 0) { path.push(command[0]) }
+
+        path = (&#x27;/&#x27; + path.join(&#x27;/&#x27;)).replace(/\/+/g, &#x27;/&#x27;);
+
+        if (method === &#x27;PUT&#x27; || method === &#x27;POST&#x27;) {
+            this.pending = { method: method, path: path };
+            this.dataPrompt();
+        } else {
+            this.request(method, path, {}, function (res, body) {
+                that.printResponse.call(that, res, body, function () {
+                    that.prompt();
+                });
+            }).end();
+        }
+        return;
+    } else if (command) {
+        console.log((&#x22;unknown command &#x27;&#x22; + command + &#x22;&#x27;&#x22;).yellow.bold);
+    }
+    this.prompt();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.http-console.Console.prototype.initialize" id="apidoc.element.http-console.Console.prototype.initialize">
+        function <span class="apidocSignatureSpan">http-console.Console.prototype.</span>initialize
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">initialize = function () {
+    var that = this;
+
+    this.welcome();
+
+    this.headers = { &#x27;Accept&#x27;: &#x27;*/*&#x27; };
+
+    if (this.options.json) {
+        this.headers[&#x27;Accept&#x27;] = &#x27;application/json&#x27;;
+        this.headers[&#x27;Content-Type&#x27;] = &#x27;application/json&#x27;;
+    }
+
+    if (this.options.auth) {
+        this.headers[&#x27;Authorization&#x27;] = &#x22;Basic &#x22; +
+            new(Buffer)(this.options.auth.username + &#x27;:&#x27; + this.options.auth.password).toString(&#x27;base64&#x27;);
+    }
+
+    this.readline = readline.createInterface(process.stdin, process.stdout);
+
+    this.readline.on(&#x27;line&#x27;, function (cmd) {
+        that.exec(cmd.trim());
+    }).on(&#x27;close&#x27;, function () {
+        process.stdout.write(&#x27;\n&#x27;);
+        process.exit(0);
+    });
+
+    this.prompt();
+
+    return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.http-console.Console.prototype.printHeaders" id="apidoc.element.http-console.Console.prototype.printHeaders">
+        function <span class="apidocSignatureSpan">http-console.Console.prototype.</span>printHeaders
+        <span class="apidocSignatureSpan">(headers)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">printHeaders = function (headers) {
+    Object.keys(headers).forEach(function (k) {
+        var key = k.replace(/\b([a-z])/g, function (_, m) {
+            return m.toUpperCase();
+        }).bold;
+        console.log(key + &#x27;: &#x27; + headers[k]);
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.http-console.Console.prototype.printResponse" id="apidoc.element.http-console.Console.prototype.printResponse">
+        function <span class="apidocSignatureSpan">http-console.Console.prototype.</span>printResponse
+        <span class="apidocSignatureSpan">(res, body, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">printResponse = function (res, body, callback) {
+    var status = (&#x27;HTTP/&#x27; + res.httpVersion +
+                  &#x27; &#x27;     + res.statusCode  +
+                  &#x27; &#x27;     + http.STATUS_CODES[res.statusCode]).bold, output;
+
+    if      (res.statusCode &#x3e;= 500) { status = status.red }
+    else if (res.statusCode &#x3e;= 400) { status = status.yellow }
+    else if (res.statusCode &#x3e;= 300) { status = status.cyan }
+    else                            { status = status.green }
+
+    console.log(status);
+
+    this.printHeaders(res.headers);
+
+    console.log();
+
+    try       { output = JSON.parse(body) }
+    catch (_) { output = body.trim() }
+
+    if (typeof(output) === &#x27;string&#x27;) {
+        output.length &#x3e; 0 &#x26;&#x26; console.log(output.white);
+    } else {
+        inspect(output);
+    }
+
+    // Make sure the buffer is flushed before
+    // we display the prompt.
+    if (process.stdout.write(&#x27;&#x27;)) {
+        callback();
+    } else {
+        process.stdout.on(&#x27;drain&#x27;, function () {
+            callback();
+        });
+    }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.http-console.Console.prototype.prompt" id="apidoc.element.http-console.Console.prototype.prompt">
+        function <span class="apidocSignatureSpan">http-console.Console.prototype.</span>prompt
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">prompt = function () {
+    var protocol = this.options.useSSL ? &#x27;https://&#x27; : &#x27;http://&#x27;,
+        path     = &#x27;/&#x27; + this.path.join(&#x27;/&#x27;),
+        host     = this.host + &#x27;:&#x27; + this.port,
+        arrow    = &#x27;&#x3e; &#x27;;
+
+    var length = (protocol + host + path + arrow).length;
+
+    this.readline.setPrompt((protocol + host).grey + path + arrow.grey, length);
+    this.readline.prompt();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.http-console.Console.prototype.rememberCookies" id="apidoc.element.http-console.Console.prototype.rememberCookies">
+        function <span class="apidocSignatureSpan">http-console.Console.prototype.</span>rememberCookies
+        <span class="apidocSignatureSpan">(headers)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">rememberCookies = function (headers) {
+    var that = this;
+    var parts, cookie, name, value, keys;
+
+    if (&#x27;set-cookie&#x27; in headers) {
+        headers[&#x27;set-cookie&#x27;].forEach(function (c) {
+            parts  = c.split(/; */);
+            cookie = parts.shift().match(/^(.+?)=(.*)$/).slice(1);
+            name   = cookie[0];
+            value  = queryString.unescape(cookie[1]);
+
+            cookie = that.cookies[name] = {
+                value: value,
+                options: {}
+            };
+
+            parts.forEach(function (part) {
+                part = part.split(&#x27;=&#x27;);
+                cookie.options[part[0]] = part.length &#x3e; 1 ? part[1] : true;
+            });
+
+            if (cookie.options.expires) {
+                cookie.options.expires = new(Date)(cookie.options.expires);
+            }
+        });
+    }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.http-console.Console.prototype.request" id="apidoc.element.http-console.Console.prototype.request">
+        function <span class="apidocSignatureSpan">http-console.Console.prototype.</span>request
+        <span class="apidocSignatureSpan">(method, path, headers, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">request = function (method, path, headers, callback) {
+    var request, that = this;
+
+    this.headers[&#x27;Host&#x27;] = this.host;
+
+    for (var k in this.headers) { headers[k] = this.headers[k] }
+
+    method = method.toUpperCase();
+    path   = encodeURI(path);
+
+    if (this.options.verbose) {
+        console.log(&#x27;&#x3e; &#x27; + (method + &#x27; &#x27; + path).grey);
+    }
+
+    this.setCookies(headers);
+
+    request = (this.options.useSSL ? https : http).request({
+        host:    that.host,
+        port:    that.port,
+        method:  method,
+        path:    path,
+        headers: headers
+    }, function (res) {
+        var body = &#x22;&#x22;;
+
+        res.setEncoding(&#x27;utf8&#x27;);
+
+        if (that.options.rememberCookies) { that.rememberCookies(res.headers) }
+        res.on(&#x27;data&#x27;, function (chunk) { body += chunk });
+        res.on(&#x27;end&#x27;,  function ()      { callback(res, body) });
+    }).on(&#x27;error&#x27;, function (e) {
+        sys.error(e.toString().red);
+        that.prompt();
+    });
+
+    return request;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.http-console.Console.prototype.setCookies" id="apidoc.element.http-console.Console.prototype.setCookies">
+        function <span class="apidocSignatureSpan">http-console.Console.prototype.</span>setCookies
+        <span class="apidocSignatureSpan">(headers)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">setCookies = function (headers) {
+    var that = this, header;
+    if ((keys = Object.keys(this.cookies)).length) {
+        header = keys.filter(function (k) {
+            var options = that.cookies[k].options;
+            return (!options.expires || options.expires &#x3e;= Date.now()) &#x26;&#x26;
+                   (!options.path    || (&#x27;/&#x27; + that.path.join(&#x27;/&#x27;)).match(new(RegExp)(&#x27;^&#x27; + options.path)));
+        }).map(function (k) {
+            return [k, queryString.escape(that.cookies[k].value) || &#x27;&#x27;].join(&#x27;=&#x27;);
+        }).join(&#x27;, &#x27;);
+        header &#x26;&#x26; (headers[&#x27;Cookie&#x27;] = header);
+    }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.http-console.Console.prototype.welcome" id="apidoc.element.http-console.Console.prototype.welcome">
+        function <span class="apidocSignatureSpan">http-console.Console.prototype.</span>welcome
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">welcome = function () {
+    process.stdout.write(&#x22;&#x3e; &#x22; + (&#x22;http-console &#x22; + exports.version).bold + &#x27;\n&#x27; +
+                         &#x22;&#x3e; Welcome, enter .help if you&#x27;re lost.&#x22; + &#x27;\n&#x27; +
+                         &#x22;&#x3e; Connecting to &#x22; + this.host + &#x22; on port &#x22; + this.port + &#x27;.\n\n&#x27;);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
